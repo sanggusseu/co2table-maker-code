@@ -1,8 +1,8 @@
 {
   "name": "quasar-boilerplate",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "다이빙 중 몸이 이산화탄소(CO2) 축적에 더 잘 견딜 수 있도록 하기 위해 설계된 표준화된 호흡 훈련인 CO2 Table을 맞춤형으로 만들어 주는 사이트입니다.",
+  "productName": "CO2 Table Maker",
   "author": "sanggusseu <sanggusseu@gmail.com>",
   "private": true,
   "scripts": {
