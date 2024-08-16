@@ -36,14 +36,7 @@
       </div>
       <div class="col-12 col-md-6">
         <h3 class="text-h6">맞춤형 CO2 Table 만들기</h3>
-        <form @submit.prevent="" class="flex">
-          <q-input
-            type="number"
-            min="1"
-            v-model="record"
-            label="숨 참기 최고 기록 (초)"
-          />
-        </form>
+        <RecordForm></RecordForm>
         <Co2Table :rows :columns></Co2Table>
       </div>
     </div>
@@ -52,16 +45,18 @@
 
 <script setup>
 import Co2Table from 'src/components/Co2Table.vue';
+import RecordForm from 'src/components/RecordForm.vue';
+import { useRecordStore } from 'src/stores/record';
 import { computed, ref } from 'vue';
 
-const record = ref('');
+const store = useRecordStore();
 const count = ref(8);
 const rows = computed(() => {
   const data = [];
   for (let i = 0; i < count.value; i++) {
     data.push({
       count: i + 1,
-      hold: record.value / 2 || 60,
+      hold: store.record / 2 || 60,
       rest: 120 - i * 15,
     });
   }
